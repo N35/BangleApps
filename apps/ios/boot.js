@@ -96,6 +96,7 @@ E.on('notify',msg=>{
     "com.storytel.iphone": "Storytel",
     "com.strava.stravaride": "Strava",
     "com.tinyspeck.chatlyio": "Slack",
+    "com.supercell.scroll": "Clash Royale",
     "com.toyopagroup.picaboo": "Snapchat",
     "com.ubercab.UberClient": "Uber",
     "com.ubercab.UberEats": "UberEats",
