@@ -97,6 +97,7 @@ E.on('notify',msg=>{
     "com.strava.stravaride": "Strava",
     "com.tinyspeck.chatlyio": "Slack",
     "com.supercell.scroll": "Clash Royale",
+    "com.supercell.magic": "Clash of Clans",
     "com.toyopagroup.picaboo": "Snapchat",
     "com.ubercab.UberClient": "Uber",
     "com.ubercab.UberEats": "UberEats",
