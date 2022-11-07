@@ -81,7 +81,7 @@ function drawBac(){
 		//console.log("firstDrinkTime: " + firstDrinkTime)
 
 		//console.log("timediff: " + time_diff);
-		ebac = Math.round( ((sum_drinks) / (weight / 100 * sex) - (0.15 * time_diff)   )   * 100) / 100;
+		ebac = Math.round( ((sum_drinks) / (weight / 100 * sex) - (0.15 * time_diff)   )   * 100) / 1000;
 
 		//console.log("BAC: " + ebac + " weight: " + confWeight + " weightInKilo: " + weight + " Unit: " + confWeightUnit);
 		//console.log("sum_drinks: " + sum_drinks);
