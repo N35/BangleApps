@@ -50,10 +50,10 @@ if(test!== undefined) {
 // Load Status ===============
 
 
-var drinksAlcohol = [12,16,5.6]; // in gramm
-// Beer:		0.3L 12g 	- 0.5L 20g
+var drinksAlcohol = [12,16,14]; // in gramm
+// Beer:		12oz 12g 	- 0.5L 20g
 // Radler:		0.3L  6g 	- 0.5L 10g
-// Wine:		0.2L 16g
+// Wine:		1.5oz 14g
 // Jäger Shot:	0.02L 5.6g 
 
 // sex:			Women 60 - Men 70 (Percent)
@@ -99,8 +99,8 @@ function loadMySettings() {
 	var settings = require('Storage').readJSON(SETTINGSFILE, true) || {};
 	confBeerSize = def(settings.beerSize, "0.3L");
 	confSex = def(settings.sex, "male");
-	confWeight = def(settings.weight, 80);
-	confWeightUnit = def(settings.weightUnit, "Kilo");
+	confWeight = def(settings.weight, 150);
+	confWeightUnit = def(settings.weightUnit, "US Pounds");
 	//console.log("Read config - weight: " + confWeight);	
 }
 
