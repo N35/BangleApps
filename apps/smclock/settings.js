@@ -46,12 +46,12 @@
     "Analog Face": {
       value:
         settings.showAnalogFace !== undefined ? settings.showAnalogFace : false,
-      format: v => v ? "On" : "Off",
       onchange: v => {
         settings.showAnalogFace = v;
         writeSettings();
       },
     },
+    "Background": stringInSettings("backgroundImage", ["3bit", "4bit"]),
     Date: stringInSettings("dateFormat", ["Long", "Short"]),
     "Draw Interval": {
       value: settings.drawInterval,
@@ -70,7 +70,6 @@
     "Week Info": {
       value:
         settings.showWeekInfo !== undefined ? settings.showWeekInfo : false,
-      format: v => v ? "On" : "Off",
       onchange: v => {
         settings.showWeekInfo = v;
         writeSettings();
@@ -79,7 +78,6 @@
     "Vector Font": {
       value:
         settings.useVectorFont !== undefined ? settings.useVectorFont : false,
-      format: v => v ? "On" : "Off",
       onchange: v => {
         settings.useVectorFont = v;
         writeSettings();
