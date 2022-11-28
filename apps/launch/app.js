@@ -42,16 +42,6 @@ let apps = launchCache.apps;
 if (!settings.fullscreen)
   Bangle.loadWidgets();
 
-let returnToClock = function() {
-  // unload everything manually
-  // ... or we could just call `load();` but it will be slower
-  Bangle.setUI(); // remove scroller's handling
-  if (lockTimeout) clearTimeout(lockTimeout);
-  Bangle.removeListener("lock", lockHandler);
-  // now load the default clock - just call .bootcde as this has the code already
-  setTimeout(eval,0,s.read(".bootcde"));
-}
-
 E.showScroller({
   h : 64*scaleval, c : apps.length,
   draw : (i, r) => {
@@ -74,17 +64,14 @@ E.showScroller({
       load(app.src);
     }
   },
-  back : returnToClock
+  back : Bangle.showClock, // button press or tap in top left shows clock now
+  remove : () => {
+    // cleanup the timeout to not leave anything behind after being removed from ram
+    if (lockTimeout) clearTimeout(lockTimeout);
+    Bangle.removeListener("lock", lockHandler);
+  }
 });
 g.flip(); // force a render before widgets have finished drawing
-
-
-
-// on bangle.js 2, the screen is used for navigating, so the single button goes back
-// on bangle.js 1, the buttons are used for navigating
-if (process.env.HWVERSION==2) {
-  setWatch(returnToClock, BTN1, {edge:"falling"});
-}
 
 // 10s of inactivity goes back to clock
 Bangle.setLocked(false); // unlock initially
@@ -93,7 +80,7 @@ let lockHandler = function(locked) {
   if (lockTimeout) clearTimeout(lockTimeout);
   lockTimeout = undefined;
   if (locked)
-    lockTimeout = setTimeout(returnToClock, 10000);
+    lockTimeout = setTimeout(Bangle.showClock, 10000);
 }
 Bangle.on("lock", lockHandler);
 if (!settings.fullscreen) // finally draw widgets
