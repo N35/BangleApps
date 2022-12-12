@@ -1,0 +1,13 @@
+∫sinx=-cosx
+∫cosx=sinx
+∫sec2x=tanx
+∫tanx=ln|secx|
+∫secxtanx=secx
+∫csc2x=-cotx
+∫cscxcotx=-cscx
+∫cotx=ln|sinx|
+∫1/x=ln|x|
+∫fg′=fg − ∫f′g
+
+1+tan2=sec2
+1+cot2=csc2
