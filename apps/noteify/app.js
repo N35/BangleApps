@@ -6,7 +6,8 @@ var alarms = require("sched").getAlarms();
 msg = "";
 
 function startNote(idx) {
-  idx == undefined ? note = "" : note = notes[idx].note;
+  idx == undefined ? note = "∫sinx=-cosx ∫cosx=sinx ∫sec2x=tanx ∫tanx=ln|secx| ∫secxtanx=secx ∫csc2x=-cotx ∫cscxcotx=-cscx ∫cotx=ln|sinx| ∫1/x=ln|x| ∫fg′=fg − ∫f′g 1+tan2=sec2 1+cot2=csc2
+" : note = notes[idx].note;
   require("textinput").input({text:note}).then(result => {
   if (result != "") {
     idx == undefined ? notes.push({"note" : result}) : notes[idx].note = result;
